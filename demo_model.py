@@ -4,7 +4,6 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 from keras.models import model_from_json
 
-
 harr_face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 json_file = open('model/data_model.json', 'r') 
 model = model_from_json(json_file.read())
@@ -54,7 +53,6 @@ def song_recommendation(dmi):
     cv2.imshow('Recommended Songs', blank)
     cv2.waitKey(0)
 
-
 # while True:
     #ret,frame = cap.read()
     # frame = cv2.resize(frame, (540,480))
@@ -73,8 +71,7 @@ for (x,y,w,h) in no_of_faces:
     print(label)
     label_position =(x+5,y)
     cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_COMPLEX,1.0,(0,255,0),2)
-    
-    
+      
 cv2.imshow('Mood Detector',frame)
 song_recommendation(index_pred)
 # if cv2.waitKey(1) & 0xFF == ord('q'):
